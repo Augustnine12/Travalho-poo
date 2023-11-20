@@ -1,0 +1,15 @@
+/home/joao/Arvo/puc/Travalho-poo/bin/Debug/net6.0/Travalho-poo
+/home/joao/Arvo/puc/Travalho-poo/bin/Debug/net6.0/Travalho-poo.deps.json
+/home/joao/Arvo/puc/Travalho-poo/bin/Debug/net6.0/Travalho-poo.runtimeconfig.json
+/home/joao/Arvo/puc/Travalho-poo/bin/Debug/net6.0/Travalho-poo.dll
+/home/joao/Arvo/puc/Travalho-poo/bin/Debug/net6.0/ref/Travalho-poo.dll
+/home/joao/Arvo/puc/Travalho-poo/bin/Debug/net6.0/Travalho-poo.pdb
+/home/joao/Arvo/puc/Travalho-poo/obj/Debug/net6.0/Travalho-poo.csproj.AssemblyReference.cache
+/home/joao/Arvo/puc/Travalho-poo/obj/Debug/net6.0/Travalho-poo.GeneratedMSBuildEditorConfig.editorconfig
+/home/joao/Arvo/puc/Travalho-poo/obj/Debug/net6.0/Travalho-poo.AssemblyInfoInputs.cache
+/home/joao/Arvo/puc/Travalho-poo/obj/Debug/net6.0/Travalho-poo.AssemblyInfo.cs
+/home/joao/Arvo/puc/Travalho-poo/obj/Debug/net6.0/Travalho-poo.csproj.CoreCompileInputs.cache
+/home/joao/Arvo/puc/Travalho-poo/obj/Debug/net6.0/Travalho-poo.dll
+/home/joao/Arvo/puc/Travalho-poo/obj/Debug/net6.0/ref/Travalho-poo.dll
+/home/joao/Arvo/puc/Travalho-poo/obj/Debug/net6.0/Travalho-poo.pdb
+/home/joao/Arvo/puc/Travalho-poo/obj/Debug/net6.0/Travalho-poo.genruntimeconfig.cache
