@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 public class ContaEnergia : Conta {
-    public float ContribuicaoIluminacaoPublica { get; set; }
+    public float ContribuicaoIluminacaoPublica ;
     public float TarifaResidencial { get; set; }
     public float TarifaComercial { get; set; }
     public float ImpostoResidencial { get; set; }
