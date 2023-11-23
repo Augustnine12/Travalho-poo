@@ -72,4 +72,57 @@ class CadastroService {
             throw;
         }
     }
+
+    public static ContaEnergia CadastrarContaEnergiaViaUsuario(int id, Consumidor consumidor) {
+        try {
+            int tipoConsumidor = consumidor.Tipo;
+
+            if (tipoConsumidor != 1) {
+                Console.WriteLine("Aviso: Este consumidor não é residencial. A tarifa de água pode ser diferente.");
+            }
+
+            Console.WriteLine("\nCadastro de Conta de Energia:");
+            Console.Write("Informe a leitura do mês atual: ");
+            float leituraMesAtual = float.Parse(Console.ReadLine());
+
+            Console.Write("Informe a leitura do mês anterior: ");
+            float leituraMesAnterior = float.Parse(Console.ReadLine());
+
+            Console.Write("Informe o valor do último mês: ");
+            float valorUltimoMes = float.Parse(Console.ReadLine());
+
+            Console.Write("Informe o total sem imposto: ");
+            float totalSemImposto = float.Parse(Console.ReadLine());
+
+            Console.Write("Informe o valor médio: ");
+            float valorMedio = float.Parse(Console.ReadLine());
+
+            Console.Write("Informe a contribuição para iluminação pública: ");
+            float contribuicaoIluminacaoPublica = float.Parse(Console.ReadLine());
+
+            Console.Write("Informe a tarifa residencial: ");
+            float tarifaResidencial = float.Parse(Console.ReadLine());
+
+            Console.Write("Informe a tarifa comercial: ");
+            float tarifaComercial = float.Parse(Console.ReadLine());
+
+            Console.Write("Informe o imposto residencial: ");
+            float impostoResidencial = float.Parse(Console.ReadLine());
+
+            Console.Write("Informe o imposto comercial: ");
+            float impostoComercial = float.Parse(Console.ReadLine());
+
+            Console.Write("Informe o total: ");
+            float total = float.Parse(Console.ReadLine());
+
+            ContaEnergia contaEnergia = new ContaEnergia(id, leituraMesAtual, leituraMesAnterior, valorUltimoMes, totalSemImposto, valorMedio, consumidor, contribuicaoIluminacaoPublica, tarifaResidencial, tarifaComercial, impostoResidencial, impostoComercial, total);
+
+            Console.WriteLine("Conta de Energia cadastrada com sucesso!");
+            return contaEnergia;
+        }
+        catch (Exception ex) {
+            Console.WriteLine($"Erro ao cadastrar conta de energia: {ex.Message}");
+            throw;
+        }
+    }
 }
