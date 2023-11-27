@@ -11,7 +11,7 @@
 
     public static float ValorTotalConta(Conta conta) {
         try {
-            return conta.TotalSemImposto;
+            return conta.Total;
         }
         catch (Exception ex) {
             Console.WriteLine($"Erro ao obter valor total da conta: {ex.Message}");

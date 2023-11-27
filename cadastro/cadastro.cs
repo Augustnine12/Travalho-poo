@@ -57,7 +57,7 @@ class CadastroService {
 
             Console.Write("Informe o valor do Confis: ");
             float confis = float.Parse(Console.ReadLine());
-
+            
             float totalSemImposto = 0;
             float valorMedio = 0;
             float total = 0;
@@ -91,12 +91,6 @@ class CadastroService {
             Console.Write("Informe o valor do último mês: ");
             float valorUltimoMes = float.Parse(Console.ReadLine());
 
-            Console.Write("Informe o total sem imposto: ");
-            float totalSemImposto = float.Parse(Console.ReadLine());
-
-            Console.Write("Informe o valor médio: ");
-            float valorMedio = float.Parse(Console.ReadLine());
-
             Console.Write("Informe a contribuição para iluminação pública: ");
             float contribuicaoIluminacaoPublica = float.Parse(Console.ReadLine());
 
@@ -112,10 +106,15 @@ class CadastroService {
             Console.Write("Informe o imposto comercial: ");
             float impostoComercial = float.Parse(Console.ReadLine());
 
-            Console.Write("Informe o total: ");
-            float total = float.Parse(Console.ReadLine());
+            ContaEnergia contaEnergia = new ContaEnergia(id, leituraMesAtual, leituraMesAnterior, valorUltimoMes, 0, 0, consumidor, contribuicaoIluminacaoPublica, tarifaResidencial, tarifaComercial, impostoResidencial, impostoComercial, 0);
 
-            ContaEnergia contaEnergia = new ContaEnergia(id, leituraMesAtual, leituraMesAnterior, valorUltimoMes, totalSemImposto, valorMedio, consumidor, contribuicaoIluminacaoPublica, tarifaResidencial, tarifaComercial, impostoResidencial, impostoComercial, total);
+            float totalSemImposto = contaEnergia.CalcularValorContaSemImpostos(leituraMesAtual, tipoConsumidor);
+            float total = contaEnergia.CalcularValorConta(leituraMesAtual, tipoConsumidor);
+            float valorMedio = contaEnergia.CalcularValorMedioConta(leituraMesAnterior, leituraMesAtual, tipoConsumidor);
+
+            contaEnergia.TotalSemImposto = totalSemImposto;
+            contaEnergia.Total = total;
+            contaEnergia.ValorMedio = valorMedio;
 
             Console.WriteLine("Conta de Energia cadastrada com sucesso!");
             return contaEnergia;

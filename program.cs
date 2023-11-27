@@ -235,18 +235,14 @@ class program {
                         break;
                     case 2:
                         float valorTotal = Relatorio.ValorTotalConta(conta);
-                        Console.WriteLine($"Consumo do ultimo mês: {valorTotal}");
+                        Console.WriteLine($"Valor total da conta: {valorTotal}");
                         break;
                     case 3:
                         float valorSemImposto = Relatorio.ValorContaSemImpostos(conta);
-                        Console.WriteLine($"Consumo do ultimo mês: {valorSemImposto}");
+                        Console.WriteLine($"Valor da conta sem impostos: {valorSemImposto}");
                         break;
                     case 4:
-                        Console.Write("Informe a leitura do mês anterior: ");
-                        float leituraMesAnterior = float.Parse(Console.ReadLine());
-                        Console.Write("Informe a leitura do mês atual: ");
-                        float leituraMesAtual = float.Parse(Console.ReadLine());
-                        Tuple<float, float>? variacaoConta = Relatorio.VariacaoContaEntreMeses(conta, leituraMesAnterior, leituraMesAtual);
+                        Tuple<float, float>? variacaoConta = Relatorio.VariacaoContaEntreMeses(conta, conta.LeituraMesAnterior, conta.LeituraMesAtual);
                         
                         if (variacaoConta != null) {
                             Console.WriteLine($"Variação da conta: {variacaoConta.Item1} para o mês anterior e {variacaoConta.Item2} para o mês atual");
@@ -255,19 +251,11 @@ class program {
                         }
                         break;
                     case 5:
-                        Console.Write("Informe a leitura do mês anterior: ");
-                        float leituraAnteriorMedia = float.Parse(Console.ReadLine());
-                        Console.Write("Informe a leitura do mês atual: ");
-                        float leituraAtualMedia = float.Parse(Console.ReadLine());
-                        float valorMedioConta = Relatorio.ValorMedioConta(conta, leituraAnteriorMedia, leituraAtualMedia);
+                        float valorMedioConta = Relatorio.ValorMedioConta(conta, conta.LeituraMesAnterior, conta.LeituraMesAtual);
                         Console.WriteLine($"Valor médio da conta: {valorMedioConta}");
                         break;
                     case 6:
-                        Console.Write("Informe a leitura do mês anterior: ");
-                        float leituraMesAnteriorMaior = float.Parse(Console.ReadLine());
-                        Console.Write("Informe a leitura do mês atual: ");
-                        float leituraMesAtualMaior = float.Parse(Console.ReadLine());
-                        string mesMaiorValor = Relatorio.MesMaiorValor(conta, leituraMesAnteriorMaior, leituraMesAtualMaior);
+                        string mesMaiorValor = Relatorio.MesMaiorValor(conta, conta.LeituraMesAnterior, conta.LeituraMesAtual);
                         Console.WriteLine($"Mês de maior valor: {mesMaiorValor}");
                         break;
                     case 7:
@@ -281,4 +269,3 @@ class program {
         } while (opcao != 7);
     }
 }
-

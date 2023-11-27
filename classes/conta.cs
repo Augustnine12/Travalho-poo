@@ -6,7 +6,8 @@ public class Conta {
     public float TotalSemImposto { get; set; }
     public float ValorMedio { get; set; }
     public Consumidor? Consumidor { get; set; }
-    public Conta(int id, float leituraMesAtual, float leituraMesAnterior, float valorUltimoMes, float totalSemImposto, float valorMedio, Consumidor consumidor) {
+    public float Total { get; set; }
+    public Conta(int id, float leituraMesAtual, float leituraMesAnterior, float valorUltimoMes, float totalSemImposto, float valorMedio, Consumidor consumidor, float total) {
         Id = id;
         LeituraMesAtual = leituraMesAtual;
         LeituraMesAnterior = leituraMesAnterior;
@@ -14,15 +15,16 @@ public class Conta {
         TotalSemImposto = totalSemImposto;
         ValorMedio = valorMedio;
         Consumidor = consumidor;
+        Total = total;
     }
 
     public float GetValorTotal() {
-        return ValorUltimoMes;
+        return Total;
     }
 
     public float SetValorTotal(float total) {
-        ValorUltimoMes = total;
-        return ValorUltimoMes;
+        Total = total;
+        return Total;
     }
 
     public float GetUltimoMes() {

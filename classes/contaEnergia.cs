@@ -7,16 +7,13 @@ public class ContaEnergia : Conta {
     public float TarifaComercial { get; set; }
     public float ImpostoResidencial { get; set; }
     public float ImpostoComercial { get; set; }
-    public float Total { get; set; }
-
-     public ContaEnergia(int id, float leituraMesAtual, float leituraMesAnterior, float valorUltimoMes, float totalSemImposto, float valorMedio, Consumidor consumidor, float contribuicaoIluminacaoPublica, float tarifaResidencial, float tarifaComercial, float impostoResidencial, float impostoComercial, float total) : base(id, leituraMesAtual, leituraMesAnterior, valorUltimoMes, totalSemImposto, valorMedio, consumidor) {
+    public ContaEnergia(int id, float leituraMesAtual, float leituraMesAnterior, float valorUltimoMes, float totalSemImposto, float valorMedio, Consumidor consumidor, float contribuicaoIluminacaoPublica, float tarifaResidencial, float tarifaComercial, float impostoResidencial, float impostoComercial, float total) : base(id, leituraMesAtual, leituraMesAnterior, valorUltimoMes, totalSemImposto, valorMedio, consumidor, total) {
         try {
             ContribuicaoIluminacaoPublica = contribuicaoIluminacaoPublica;
             TarifaResidencial = tarifaResidencial;
             TarifaComercial = tarifaComercial;
             ImpostoResidencial = impostoResidencial;
             ImpostoComercial = impostoComercial;
-            Total = total;
         }
         catch (Exception ex) {
             Console.WriteLine($"Erro ao criar ContaEnergia: {ex.Message}");

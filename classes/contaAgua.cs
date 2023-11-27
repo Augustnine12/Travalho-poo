@@ -5,13 +5,11 @@ public class ContaAgua : Conta
 {
     public float Confis { get; set; }
     public Dictionary<string, Tuple<float, float>> TarifasPorFaixa { get; set; }
-    public float Total { get; set; }
 
-    public ContaAgua(int id, float leituraMesAtual, float leituraMesAnterior, float valorUltimoMes, float totalSemImposto, float valorMedio, Consumidor consumidor, float confis, Dictionary<string, Tuple<float, float>> tarifasPorFaixa, float total) : base(id, leituraMesAtual, leituraMesAnterior, valorUltimoMes, totalSemImposto, valorMedio, consumidor) {
+    public ContaAgua(int id, float leituraMesAtual, float leituraMesAnterior, float valorUltimoMes, float totalSemImposto, float valorMedio, Consumidor consumidor, float confis, Dictionary<string, Tuple<float, float>> tarifasPorFaixa, float total) : base(id, leituraMesAtual, leituraMesAnterior, valorUltimoMes, totalSemImposto, valorMedio, consumidor, total) {
         try {
             Confis = confis;
             TarifasPorFaixa = tarifasPorFaixa;
-            Total = total;
         }
         catch (Exception ex) {
             Console.WriteLine($"Erro ao criar ContaAgua: {ex.Message}");
