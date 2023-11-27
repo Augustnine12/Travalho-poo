@@ -57,12 +57,16 @@ class CadastroService {
 
             Console.Write("Informe o valor do Confis: ");
             float confis = float.Parse(Console.ReadLine());
-            
-            float totalSemImposto = 0;
-            float valorMedio = 0;
-            float total = 0;
 
-            ContaAgua contaAgua = new ContaAgua(id, leituraMesAtual, leituraMesAnterior, valorUltimoMes, totalSemImposto, valorMedio, consumidor, confis, tarifasPorFaixa, total);
+            ContaAgua contaAgua = new ContaAgua(id, leituraMesAtual, leituraMesAnterior, valorUltimoMes, 0, 0, consumidor, confis, tarifasPorFaixa, 0);
+            
+            // float totalSemImposto = contaAgua.CalcularValorContaSemImpostos(leituraMesAtual, tipoConsumidor);
+            float total = contaAgua.CalcularValorConta(leituraMesAtual, tipoConsumidor);
+            float valorMedio = contaAgua.CalcularValorMedioConta(leituraMesAnterior, leituraMesAtual, tipoConsumidor);
+
+            // contaAgua.TotalSemImposto = totalSemImposto;
+            contaAgua.Total = total;
+            contaAgua.ValorMedio = valorMedio;
 
             Console.WriteLine("Conta de Água cadastrada com sucesso!");
             return contaAgua;

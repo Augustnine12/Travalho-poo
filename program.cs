@@ -47,7 +47,7 @@ class program {
                                 Console.WriteLine("Nenhuma conta ainda foi cadastrada. Cadastre antes de consultar.");
                             } else {
                                 Console.WriteLine("Escolha o tipo de conta que deseja consultar:");
-                                Console.WriteLine("1) Conta de Água, 2) Conta de Energia");
+                                Console.WriteLine("1) Conta de Água, 2) Conta de Energia ou 3) pra sair da consulta");
 
                                 int tipoConsultaConta;
                                 do {
@@ -96,13 +96,15 @@ class program {
                                                     Console.WriteLine("Nenhuma conta de Energia cadastrada ainda. Cadastre uma conta de Energia primeiro.");
                                                 }
                                                 break;
-
+                                            case 3: 
+                                                Console.WriteLine("Saindo da consulta!");
+                                                break;
                                             default:
                                                 Console.WriteLine("Tipo de conta inválido!");
                                                 break;
                                         }
                                     }
-                                } while (tipoConsultaConta != 2);
+                                } while (tipoConsultaConta != 3);
                             }
                             break;
                         case 3:
